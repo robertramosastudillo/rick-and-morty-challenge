@@ -3,6 +3,36 @@ import styled from "styled-components";
 export const BoardCardContainer = styled.div`
   cursor: pointer;
   aspect-ratio: 1 / 1;
+
+  animation: shake-card 2s ease;
+
+  @keyframes shake-card {
+    from {
+      transform: rotate(0deg);
+    }
+    4% {
+      transform: rotate(5deg);
+    }
+    12.5% {
+      transform: rotate(-5deg);
+    }
+    21% {
+      transform: rotate(5deg);
+    }
+    29% {
+      transform: rotate(-5deg);
+    }
+    37.5% {
+      transform: rotate(5deg);
+    }
+    46% {
+      transform: rotate(-5deg);
+    }
+    50%,
+    to {
+      transform: rotate(0deg);
+    }
+  }
 `;
 
 export const BoardCardAction = styled.div`
@@ -12,7 +42,8 @@ export const BoardCardAction = styled.div`
   text-align: center;
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  transform: ${({ actionFlipped }) => actionFlipped ? "rotateY(180deg)" : "none"};
+  transform: ${({ actionFlipped }) =>
+    actionFlipped ? "rotateY(180deg)" : "none"};
 `;
 
 export const BoardCardOpen = styled.div`
