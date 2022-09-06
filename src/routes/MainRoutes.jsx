@@ -10,6 +10,7 @@ export const MainRoutes = () => {
         <Route path="/" element={<Navigate to="app" replace />} />
         <Route path="app/*" element={<MainLayout />}>
           <Route index element={<Game />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </RoutesWithNotFound>
     </BrowserRouter>
