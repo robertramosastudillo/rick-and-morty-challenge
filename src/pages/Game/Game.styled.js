@@ -79,6 +79,10 @@ export const OptionsMenu = styled.div`
   gap: 10px;
   width: 100%;
   backdrop-filter: blur(1px);
+
+  @media ${device.laptopL} {
+    font-size: 22px;
+  }
 `;
 
 export const Movements = styled.div`
@@ -112,6 +116,11 @@ export const Button = styled.button`
 
   &:hover {
     background-color: #128e2d;
+  }
+
+  @media ${device.laptopL} {
+    font-size: 22px;
+    height: 60px;
   }
 `;
 

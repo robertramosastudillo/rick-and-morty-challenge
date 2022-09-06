@@ -15,7 +15,11 @@ export const HeaderContainer = styled.div`
     justify-content: flex-start;
   }
 
-  animation: BottomHeader .8s ease-in-out;
+  @media ${device.laptopL} {
+    height: 84px;
+  }
+
+  animation: BottomHeader 0.8s ease-in-out;
 
   @keyframes BottomHeader {
     0% {
@@ -32,8 +36,14 @@ export const HeaderContainer = styled.div`
 export const LogoContainer = styled.div`
   width: 44px;
   height: 44px;
+
   @media ${device.laptop} {
     margin-left: 40px;
+  }
+
+  @media ${device.laptopL} {
+    width: 50px;
+    height: 50px;
   }
 `;
 
@@ -43,4 +53,8 @@ export const Logo = styled.img`
 export const LogoText = styled.div`
   color: white;
   font-weight: 700;
+
+  @media ${device.laptopL} {
+    font-size: 22px;
+  }
 `;

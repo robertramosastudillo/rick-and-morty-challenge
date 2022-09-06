@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { device } from "../../styles/device";
 
 export const FooterContainer = styled.div`
   width: 100%;
@@ -9,7 +10,6 @@ export const FooterContainer = styled.div`
   gap: 16px;
   justify-content: center;
   backdrop-filter: blur(1px);
-
   animation: topFooter 0.8s ease-in-out;
 
   @keyframes topFooter {
@@ -21,6 +21,10 @@ export const FooterContainer = styled.div`
       opacity: 1;
       transform: translateY(0px);
     }
+  }
+
+  @media ${device.laptopL} {
+    height: 84px;
   }
 `;
 
@@ -40,5 +44,9 @@ export const FooterText = styled.div`
     &:hover {
       border-bottom: 1px solid #fff;
     }
+  }
+
+  @media ${device.laptopL} {
+    font-size: 22px;
   }
 `;
