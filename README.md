@@ -1,6 +1,8 @@
 # Rick And Morty Challenge
 
-### Esta aplicación es un gran juego de combinación de cartas basado en la API pública de Rick And Morty disponible para PCs, tablets y celulares a demás de ser una Progressive Web App (PWA)
+Esta aplicación es un gran juego de combinación de cartas basado en la API pública de Rick And Morty disponible para PCs, tablets y celulares a demás de ser una Progressive Web App (PWA)
+
+---
 
 [Demo](https://rick-and-morty-challenge-main.vercel.app "Rick And Morty Challenge App")
 
