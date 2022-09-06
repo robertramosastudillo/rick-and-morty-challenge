@@ -25,6 +25,20 @@ export const FooterContainer = styled.div`
 `;
 
 export const FooterText = styled.div`
-  color: white;
+  color: #fff;
   font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+
+  a {
+    color: #fff;
+    cursor: pointer;
+    border-bottom: 1px solid transparent;
+    &:hover {
+      border-bottom: 1px solid #fff;
+    }
+  }
 `;
