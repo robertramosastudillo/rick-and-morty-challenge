@@ -7,9 +7,5 @@ export const convertCharacterToBoardCard = (characters) => {
     };
   });
 
-  newCharacters.sort(() => {
-    return Math.random() - 0.5;
-  });
-
   return newCharacters.slice(1, 11);
 };

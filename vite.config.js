@@ -12,7 +12,7 @@ export default defineConfig({
         enabled: true,
       },
       includeAssets: [
-        "/assets/bg.jpg",
+        "/assets/bg.png",
         "/assets/loader.png",
         "/assets/rick-and-morty-front.jpg",
         "/assets/rickandmortyapi-white.svg",

@@ -126,6 +126,7 @@ export const Game = () => {
     setMovements(0);
     setReStartTime(true);
     setStoptTime(false);
+    setFinalized(1);
   };
 
   return (
