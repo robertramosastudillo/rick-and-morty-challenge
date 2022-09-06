@@ -1,10 +1,17 @@
 import Board from "../../components/Board/Board";
 import { Timer } from "../../components/Timer/Timer";
 import { useEffect, useState } from "react";
-import { OptionsMenuContainer, BoardContainer, TimerGame } from "./Game.styled";
+import {
+  OptionsMenuContainer,
+  BoardContainer,
+  TimerGame,
+  WinnerText,
+  WinnerBg,
+} from "./Game.styled";
 import { GameContainer, Movements, OptionsMenu, Button } from "./Game.styled";
 import rickAndMortyService from "../../api/services/rickAndMortyService";
 import { convertCharacterToBoardCard } from "../../utilities/convertCharacterToBoardCard.utility";
+import confetti from "canvas-confetti";
 
 export const Game = () => {
   const [shuffledMemoBlocks, setShuffledMemoBlocks] = useState([]);
@@ -13,6 +20,7 @@ export const Game = () => {
   const [finalized, setFinalized] = useState(1);
   const [reStartTime, setReStartTime] = useState(true);
   const [stoptTime, setStoptTime] = useState(false);
+  const [winner, setWinner] = useState(false);
   const [selectedMemoBlock, setselectedMemoBlock] = useState(null);
   const [characters, setCharacters] = useState([]);
   const [resetCharacters, setResetCharacters] = useState(false);
@@ -43,6 +51,14 @@ export const Game = () => {
     }
   }, [characters]);
 
+  useEffect(() => {
+    if (winner) {
+      setTimeout(() => {
+        setWinner(false);
+      }, 1500);
+    }
+  }, [winner]);
+
   const shuffleArray = (a) => {
     for (let i = a.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -65,8 +81,20 @@ export const Game = () => {
       setselectedMemoBlock(null);
       setFinalized(finalized + 1);
       if (finalized === 10) {
-        console.log("Ganaste!!!");
+        confetti({
+          particleCount: 200,
+          spread: 70,
+          origin: { y: 0.6 },
+          angle: 120,
+        });
+        confetti({
+          particleCount: 200,
+          spread: 70,
+          origin: { y: 0.6 },
+          angle: 60,
+        });
         setStoptTime(true);
+        setWinner(true);
       }
     } else {
       setAnimating(true);
@@ -100,25 +128,30 @@ export const Game = () => {
   };
 
   return (
-    <GameContainer>
-      <BoardContainer>
-        <Board
-          memoBlocks={shuffledMemoBlocks}
-          animating={animating}
-          handleMemoClick={handleMemoClick}
-        />
-      </BoardContainer>
-      <OptionsMenuContainer>
-        <OptionsMenu>
-          <Movements>Movimientos: {movements}</Movements>
-        </OptionsMenu>
-        <OptionsMenu>
-          <TimerGame>Tiempo de juego:</TimerGame>
-          <Timer reStartTime={reStartTime} stoptTime={stoptTime} />
-        </OptionsMenu>
+    <>
+      <GameContainer>
+        <WinnerBg winner={winner}>
+          <WinnerText winner={winner}>Ganaste!!!</WinnerText>
+        </WinnerBg>
+        <BoardContainer>
+          <Board
+            memoBlocks={shuffledMemoBlocks}
+            animating={animating}
+            handleMemoClick={handleMemoClick}
+          />
+        </BoardContainer>
+        <OptionsMenuContainer>
+          <OptionsMenu>
+            <Movements>Movimientos: {movements}</Movements>
+          </OptionsMenu>
+          <OptionsMenu>
+            <TimerGame>Tiempo de juego:</TimerGame>
+            <Timer reStartTime={reStartTime} stoptTime={stoptTime} />
+          </OptionsMenu>
 
-        <Button onClick={playAgain}>Jugar de nuevo</Button>
-      </OptionsMenuContainer>
-    </GameContainer>
+          <Button onClick={playAgain}>Jugar de nuevo</Button>
+        </OptionsMenuContainer>
+      </GameContainer>
+    </>
   );
 };

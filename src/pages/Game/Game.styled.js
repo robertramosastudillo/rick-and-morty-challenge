@@ -9,6 +9,7 @@ export const GameContainer = styled.div`
   gap: 40px;
   max-width: 1440px;
   margin: auto;
+  position: relative;
 
   @media ${device.laptop} {
     flex-direction: row;
@@ -80,7 +81,7 @@ export const Button = styled.button`
   cursor: pointer;
   color: #efeff1;
   background-color: #12a533;
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 
   &:hover {
     background-color: #128e2d;
@@ -89,4 +90,39 @@ export const Button = styled.button`
 
 export const TitleContainer = styled.div`
   width: 100%;
+`;
+export const WinnerBg = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: ${({ winner }) => (winner ? "1" : "0")};
+  transition: 1s;
+  z-index: 10;
+  pointer-events: none;
+`;
+
+export const WinnerText = styled.div`
+  font-size: 36px;
+  color: #efeff1;
+  z-index: 10;
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 30px 60px;
+  border-radius: 6px;
+  animation: ${({ winner }) => (winner ? "modal-winner 1s ease-in-out;" : "none")};
+
+  @keyframes modal-winner {
+    0% {
+      opacity: 0;
+      transform: translateY(200px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
 `;
