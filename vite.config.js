@@ -11,6 +11,12 @@ export default defineConfig({
       devOptions: {
         enabled: true,
       },
+      includeAssets: [
+        "/assets/bg.jpg",
+        "/assets/loader.png",
+        "/assets/rick-and-morty-front.jpg",
+        "/assets/rickandmortyapi-white.svg",
+      ],
       manifest: {
         theme_color: "#12a533",
         background_color: "#000000",
