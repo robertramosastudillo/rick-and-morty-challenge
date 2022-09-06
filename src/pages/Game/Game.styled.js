@@ -76,10 +76,11 @@ export const Button = styled.button`
   min-width: 140px;
   width: 100%;
   font-size: 16px;
-  font-weight: 600;
+  font-weight: 700;
   cursor: pointer;
   color: #efeff1;
   background-color: #12a533;
+  font-family: 'Noto Sans', sans-serif;
 
   &:hover {
     background-color: #128e2d;

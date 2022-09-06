@@ -20,7 +20,7 @@ const GlobalStyle = createGlobalStyle`
     body {
         /* background-color: #26262C; */
         background-color: rgba(0, 0, 0, 0.8);
-        font-family: 'RickAndMortyFont',sans-serif;
+        /* font-family: 'get_schwiftyregular',sans-serif; */
         font-size: 1.6rem;
        
     }

@@ -15,6 +15,7 @@ export const Game = () => {
   const [stoptTime, setStoptTime] = useState(false);
   const [selectedMemoBlock, setselectedMemoBlock] = useState(null);
   const [characters, setCharacters] = useState([]);
+  const [resetCharacters, setResetCharacters] = useState(false);
 
   useEffect(() => {
     const getCharacters = async () => {
@@ -23,7 +24,7 @@ export const Game = () => {
     };
 
     getCharacters();
-  }, []);
+  }, [resetCharacters]);
 
   useEffect(() => {
     if (characters.length > 0) {
@@ -84,6 +85,9 @@ export const Game = () => {
   };
 
   const playAgain = () => {
+    setTimeout(() => {
+      setResetCharacters(!resetCharacters);
+    }, 1000);
     setShuffledMemoBlocks((items) =>
       items.map((item) => ({
         ...item,
