@@ -9,6 +9,7 @@ export const HeaderContainer = styled.div`
   align-items: center;
   gap: 16px;
   justify-content: center;
+  backdrop-filter: blur(1px);
 
   @media ${device.laptop} {
     justify-content: flex-start;

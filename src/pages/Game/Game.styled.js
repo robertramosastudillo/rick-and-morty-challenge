@@ -52,16 +52,17 @@ export const OptionsMenu = styled.div`
   background-color: rgba(255, 255, 255, 0.1);
   gap: 10px;
   width: 100%;
+  backdrop-filter: blur(1px);
 `;
 
 export const Movements = styled.div`
   color: #efeff1;
-  font-weight: 500;
+  font-weight: 700;
 `;
 
 export const TimerGame = styled.div`
   color: #efeff1;
-  font-weight: 500;
+  font-weight: 700;
 `;
 
 export const Button = styled.button`
@@ -81,7 +82,7 @@ export const Button = styled.button`
   cursor: pointer;
   color: #efeff1;
   background-color: #12a533;
-  font-family: "Noto Sans", sans-serif;
+  font-family: 'Roboto', sans-serif;
 
   &:hover {
     background-color: #128e2d;
@@ -104,6 +105,7 @@ export const WinnerBg = styled.div`
   transition: 1s;
   z-index: 10;
   pointer-events: none;
+  backdrop-filter: blur(2px);
 `;
 
 export const WinnerText = styled.div`
@@ -113,6 +115,7 @@ export const WinnerText = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
   padding: 30px 60px;
   border-radius: 6px;
+  font-family: 'Roboto', sans-serif;
   animation: ${({ winner }) => (winner ? "modal-winner 1s ease-in-out;" : "none")};
 
   @keyframes modal-winner {

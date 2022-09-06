@@ -8,6 +8,7 @@ export const FooterContainer = styled.div`
   align-items: center;
   gap: 16px;
   justify-content: center;
+  backdrop-filter: blur(1px);
 `;
 
 export const FooterText = styled.div`

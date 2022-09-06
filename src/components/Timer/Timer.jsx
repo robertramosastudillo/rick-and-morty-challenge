@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { TimerContainer } from "./Timer.styled";
-export const Timer = ({ reStartTime, stoptTime }: any) => {
+export const Timer = ({ reStartTime, stoptTime }) => {
   const [seconds, setSeconds] = useState(0);
   const [minutes, setMinutes] = useState(0);
 
