@@ -14,6 +14,19 @@ export const HeaderContainer = styled.div`
   @media ${device.laptop} {
     justify-content: flex-start;
   }
+
+  animation: BottomHeader .8s ease-in-out;
+
+  @keyframes BottomHeader {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
 `;
 
 export const LogoContainer = styled.div`

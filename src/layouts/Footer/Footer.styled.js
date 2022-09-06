@@ -9,6 +9,19 @@ export const FooterContainer = styled.div`
   gap: 16px;
   justify-content: center;
   backdrop-filter: blur(1px);
+
+  animation: topFooter 0.8s ease-in-out;
+
+  @keyframes topFooter {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+  }
 `;
 
 export const FooterText = styled.div`

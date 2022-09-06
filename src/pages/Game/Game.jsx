@@ -12,6 +12,7 @@ import { GameContainer, Movements, OptionsMenu, Button } from "./Game.styled";
 import rickAndMortyService from "../../api/services/rickAndMortyService";
 import { convertCharacterToBoardCard } from "../../utilities/convertCharacterToBoardCard.utility";
 import confetti from "canvas-confetti";
+import { Loader } from "../../components/Loader/Loader";
 
 export const Game = () => {
   const [shuffledMemoBlocks, setShuffledMemoBlocks] = useState([]);
@@ -134,11 +135,15 @@ export const Game = () => {
           <WinnerText winner={winner}>Ganaste!!!</WinnerText>
         </WinnerBg>
         <BoardContainer>
-          <Board
-            memoBlocks={shuffledMemoBlocks}
-            animating={animating}
-            handleMemoClick={handleMemoClick}
-          />
+          {characters.length === 0 ? (
+            <Loader />
+          ) : (
+            <Board
+              memoBlocks={shuffledMemoBlocks}
+              animating={animating}
+              handleMemoClick={handleMemoClick}
+            />
+          )}
         </BoardContainer>
         <OptionsMenuContainer>
           <OptionsMenu>

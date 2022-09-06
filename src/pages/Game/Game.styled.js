@@ -19,6 +19,19 @@ export const GameContainer = styled.div`
   @media ${device.laptopL} {
     gap: 80px;
   }
+
+  animation: fadeIn 0.8s ease-in-out;
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      /* transform: translateX(-80px); */
+    }
+    100% {
+      opacity: 1;
+      /* transform: translateX(0px); */
+    }
+  }
 `;
 
 export const BoardContainer = styled.div`
@@ -40,6 +53,19 @@ export const OptionsMenuContainer = styled.div`
 
   @media ${device.laptop} {
     width: 45%;
+  }
+
+  animation: TopOptionsMenu 0.8s ease-in-out;
+
+  @keyframes TopOptionsMenu {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0px);
+    }
   }
 `;
 
@@ -82,7 +108,7 @@ export const Button = styled.button`
   cursor: pointer;
   color: #efeff1;
   background-color: #12a533;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 
   &:hover {
     background-color: #128e2d;
@@ -115,8 +141,9 @@ export const WinnerText = styled.div`
   background-color: rgba(255, 255, 255, 0.2);
   padding: 30px 60px;
   border-radius: 6px;
-  font-family: 'Roboto', sans-serif;
-  animation: ${({ winner }) => (winner ? "modal-winner 1s ease-in-out;" : "none")};
+  font-family: "Roboto", sans-serif;
+  animation: ${({ winner }) =>
+    winner ? "modal-winner 1s ease-in-out;" : "none"};
 
   @keyframes modal-winner {
     0% {
