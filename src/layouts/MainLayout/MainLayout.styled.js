@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import img from "../../assets/bg.jpg";
+import img from "/assets/bg.jpg";
 
 export const MainLayoutContainer = styled.div`
   background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(${img});

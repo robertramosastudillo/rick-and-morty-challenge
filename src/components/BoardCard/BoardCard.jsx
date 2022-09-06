@@ -1,4 +1,4 @@
-import rickandmortyfront from "../../assets/rick-and-morty-front.jpg";
+import rickandmortyfront from "/assets/rick-and-morty-front.jpg";
 import { BoardCardClose, BoardCardOpen } from "./BoardCard.styled";
 import {
   BoardCardAction,

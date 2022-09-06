@@ -4,7 +4,7 @@ import {
   LogoContainer,
   LogoText,
 } from "./Header.styled";
-import logo from "../../assets/rickandmortyapi-white.svg";
+import logo from "/assets/rickandmortyapi-white.svg";
 
 export const Header = () => {
   return (
