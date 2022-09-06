@@ -123,6 +123,7 @@ export const Game = () => {
         flipped: false,
       }))
     );
+    setCharacters([]);
     setMovements(0);
     setReStartTime(true);
     setStoptTime(false);
