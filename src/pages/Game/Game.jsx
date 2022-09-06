@@ -128,6 +128,7 @@ export const Game = () => {
     setReStartTime(true);
     setStoptTime(false);
     setFinalized(1);
+    setselectedMemoBlock(null);
   };
 
   return (
