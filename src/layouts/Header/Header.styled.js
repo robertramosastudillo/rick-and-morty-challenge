@@ -1,15 +1,17 @@
 import styled from "styled-components";
 import { device } from "../../styles/device";
+import * as palette from "../../styles/variables";
 
 export const HeaderContainer = styled.div`
   width: 100%;
   height: 72px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: ${palette.blackOpacity};
   display: flex;
   align-items: center;
   gap: 16px;
   justify-content: center;
   backdrop-filter: blur(1px);
+  animation: BottomHeader 0.8s ease-in-out;
 
   @media ${device.laptop} {
     justify-content: flex-start;
@@ -17,19 +19,6 @@ export const HeaderContainer = styled.div`
 
   @media ${device.laptopL} {
     height: 84px;
-  }
-
-  animation: BottomHeader 0.8s ease-in-out;
-
-  @keyframes BottomHeader {
-    0% {
-      opacity: 0;
-      transform: translateY(-20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
   }
 `;
 
@@ -51,8 +40,8 @@ export const Logo = styled.img`
   width: 100%;
 `;
 export const LogoText = styled.div`
-  color: white;
-  font-weight: 700;
+  color: ${palette.primaryColorText};
+  font-weight: ${palette.BoldFont};
 
   @media ${device.laptopL} {
     font-size: 22px;

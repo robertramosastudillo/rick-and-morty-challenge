@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import * as palette from "../../styles/variables";
 
 export const TimerContainer = styled.div`
-  color: #efeff1;
-  font-weight: 700;
+  color: ${palette.primaryColorText};
+  font-weight: ${palette.BoldFont};
 `;

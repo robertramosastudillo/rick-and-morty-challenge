@@ -1,10 +1,11 @@
 import styled from "styled-components";
 import { device } from "../../styles/device";
+import * as palette from "../../styles/variables";
 
 export const FooterContainer = styled.div`
   width: 100%;
   height: 72px;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: ${palette.blackOpacity};
   display: flex;
   align-items: center;
   gap: 16px;
@@ -12,25 +13,14 @@ export const FooterContainer = styled.div`
   backdrop-filter: blur(1px);
   animation: topFooter 0.8s ease-in-out;
 
-  @keyframes topFooter {
-    0% {
-      opacity: 0;
-      transform: translateY(20px);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
-
   @media ${device.laptopL} {
     height: 84px;
   }
 `;
 
 export const FooterText = styled.div`
-  color: #fff;
-  font-weight: 700;
+  color: ${palette.primaryColorText};
+  font-weight: ${palette.BoldFont};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -38,11 +28,11 @@ export const FooterText = styled.div`
   gap: 6px;
 
   a {
-    color: #fff;
+    color: ${palette.primaryColorText};
     cursor: pointer;
     border-bottom: 1px solid transparent;
     &:hover {
-      border-bottom: 1px solid #fff;
+      border-bottom: 1px solid ${palette.primaryColorText};
     }
   }
 

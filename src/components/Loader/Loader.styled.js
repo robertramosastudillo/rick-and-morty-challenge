@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import * as palette from "../../styles/variables";
 
 export const LoaderContainer = styled.div`
   display: flex;
@@ -10,22 +11,11 @@ export const LoaderContainer = styled.div`
 
 export const LoaderImg = styled.img`
   animation: rotateLoader 2s linear infinite;
-
-  @keyframes rotateLoader {
-    0% {
-      -webkit-transform: rotate(0);
-      transform: rotate(0);
-    }
-    100% {
-      -webkit-transform: rotate(360deg);
-      transform: rotate(360deg);
-    }
-  }
 `;
 
 export const LoaderText = styled.div`
-  color: #efeff1;
+  color: ${palette.blackOpacity};
   font-size: 26px;
-  font-weight: 700;
-  font-family: 'Roboto', sans-serif;
+  font-weight: ${palette.BoldFont};
+  font-family: ${palette.primaryFont}, sans-serif;
 `;
