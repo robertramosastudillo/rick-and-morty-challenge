@@ -14,7 +14,7 @@ export const LoaderImg = styled.img`
 `;
 
 export const LoaderText = styled.div`
-  color: ${palette.blackOpacity};
+  color: ${palette.primaryColorText};
   font-size: 26px;
   font-weight: ${palette.BoldFont};
   font-family: ${palette.primaryFont}, sans-serif;
